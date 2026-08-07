@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { IonApp, IonRouterOutlet, IonMenu, IonSplitPane, IonMenuToggle, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonIcon, IonLabel, IonList} from '@ionic/angular/standalone';
+import { IonIcon} from '@ionic/angular/standalone';
+import { homeSharp, searchSharp, bookmarkSharp, settingsSharp} from 'ionicons/icons';
+import { IonApp, IonRouterOutlet, IonMenu, IonSplitPane, IonMenuToggle, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonList} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +13,12 @@ import { IonApp, IonRouterOutlet, IonMenu, IonSplitPane, IonMenuToggle, IonHeade
   imports: [IonApp, IonRouterOutlet, IonMenu, IonSplitPane, IonMenuToggle, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonIcon, IonLabel, IonList, RouterLink],
 })
 export class AppComponent {
-  constructor() {}
+  constructor() {
+    addIcons({
+      homeSharp,
+      searchSharp,
+      bookmarkSharp,
+      settingsSharp
+    });
+  }
 }

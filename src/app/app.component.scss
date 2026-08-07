@@ -1,27 +1,21 @@
-ion-menu{
-
+ion-menu {
 --width:260px;
-
 }
 
-ion-toolbar{
-
+ion-toolbar {
 --background:#171717;
-
 --color:white;
-
 }
 
-ion-content{
-
+ion-content {
 --background:#0d0d0d;
-
 }
 
-ion-item{
-
+ion-item {
 margin:8px;
-
 border-radius:10px;
+}
 
+ion-icon {
+    margin:20px;
 }
