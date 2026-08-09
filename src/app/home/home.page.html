@@ -7,4 +7,16 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>Home page</ion-content>
+<ion-content>
+  <swiper-container slides-per-view="1" loop="true" autoplay-delay="4000" pagination="true">
+
+  @for (anime of topAnime; track anime.mal_id) {
+    <swiper-slide>
+      <div class="banner" [style.background-image]="'url(' + anime.images.jpg.large_image_url + ')'">
+        <h1>{{anime.title}}</h1>
+      </div>
+    </swiper-slide>
+  }
+
+  </swiper-container>
+</ion-content>
