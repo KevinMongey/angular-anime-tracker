@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Anime {
 
-  //topAnime: any [] = [];
+  
 
   constructor(private http: HttpClient) { 
 
@@ -14,5 +14,9 @@ export class Anime {
 
   getTopAnime() {
     return this.http.get("https://api.jikan.moe/v4/top/anime");
+  }
+
+  getSeasonNow() {
+    return this.http.get("https://api.jikan.moe/v4/seasons/now")
   }
 }

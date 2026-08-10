@@ -1,0 +1,17 @@
+<section class="row">
+  <div class="header">
+    <H2>{{ title }}</H2>
+  </div>
+  <div class="body">
+    @for (anime of anime; track anime.images) {
+      <ion-card>
+        <img alt="anime banner" [src]="anime.images.jpg.large_image_url">
+        <ion-card-header>
+          <ion-card-title>{{anime.title_english}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>INFO HERE</ion-card-content>
+        <!--<ion-button fill="clear">Action 1</ion-button> -->
+      </ion-card>
+    }
+  </div>
+</section>
