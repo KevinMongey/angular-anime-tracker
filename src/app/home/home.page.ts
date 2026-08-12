@@ -18,13 +18,6 @@ export class HomePage {
   topAnime: any[] = [];
   upcomingAnime: any[] = [];
 
-  removeDuplicates(animeList: any[]): any[] {
-    return animeList.filter(
-      (anime, index, self) =>
-        index === self.findIndex(a => a.mal_id == anime.mal_id)
-    );
-  }
-
   constructor(private animeService: Anime) {
     this.animeService.getTopAnime().subscribe((result: any) => {
       this.topAnime = result.data;
@@ -32,11 +25,11 @@ export class HomePage {
     });
 
     this.animeService.getSeasonNow().subscribe((result: any) => {
-      this.seasonalAnime = this.removeDuplicates(result.data);
+      this.seasonalAnime = result.data;
     });
 
     this.animeService.getSeasonUpcoming().subscribe((result: any) => {
-      this.upcomingAnime = this.removeDuplicates(result.data);
+      this.upcomingAnime = result.data;
     });
   }
 }

@@ -13,14 +13,22 @@ export class Anime {
   }
 
   getTopAnime() {
-    return this.http.get('https://api.jikan.moe/v4/top/anime');
+    return this.http.get('https://api.tenrai.org/v1/top/anime');
   }
 
   getSeasonNow() {
-    return this.http.get('https://api.jikan.moe/v4/seasons/now?sfw=true');
+    return this.http.get('https://api.tenrai.org/v1/seasons/now?sfw=true');
   }
 
   getSeasonUpcoming() {
-    return this.http.get('https://api.jikan.moe/v4/seasons/upcoming');
+    return this.http.get('https://api.tenrai.org/v1/seasons/upcoming');
+  }
+
+  searchAnime(query: string) {
+    return this.http.get(`https://api.tenrai.org/v1/anime?q=${query}`)
+  }
+
+  searchAnimeByLetter(query: string) {
+    return this.http.get(`https://api.tenrai.org/v1/anime?letter=${query}`)
   }
 }
