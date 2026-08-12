@@ -5,7 +5,9 @@
   <div class="body">
     @for (anime of anime; track anime.images) {
       <ion-card>
-        <img alt="anime banner" [src]="anime.images.jpg.large_image_url">
+        <div class="image-container">
+          <img alt="anime banner" [src]="anime.images.jpg.large_image_url">
+        </div>
         <ion-chip>{{anime.status}}</ion-chip>
         <ion-card-header>
           <ion-card-title>{{anime.title_english}}</ion-card-title>

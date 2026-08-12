@@ -13,10 +13,14 @@ export class Anime {
   }
 
   getTopAnime() {
-    return this.http.get("https://api.jikan.moe/v4/top/anime");
+    return this.http.get('https://api.jikan.moe/v4/top/anime');
   }
 
   getSeasonNow() {
-    return this.http.get("https://api.jikan.moe/v4/seasons/now")
+    return this.http.get('https://api.jikan.moe/v4/seasons/now?sfw=true');
+  }
+
+  getSeasonUpcoming() {
+    return this.http.get('https://api.jikan.moe/v4/seasons/upcoming');
   }
 }

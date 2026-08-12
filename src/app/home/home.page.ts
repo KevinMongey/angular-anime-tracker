@@ -15,15 +15,28 @@ export class HomePage {
 
   topAnimeLimited: any [] = [];
   seasonalAnime: any [] = [];
+  topAnime: any[] = [];
+  upcomingAnime: any[] = [];
+
+  removeDuplicates(animeList: any[]): any[] {
+    return animeList.filter(
+      (anime, index, self) =>
+        index === self.findIndex(a => a.mal_id == anime.mal_id)
+    );
+  }
 
   constructor(private animeService: Anime) {
     this.animeService.getTopAnime().subscribe((result: any) => {
+      this.topAnime = result.data;
       this.topAnimeLimited = result.data.slice(0,4);
     });
 
     this.animeService.getSeasonNow().subscribe((result: any) => {
-      console.log(result);
-      this.seasonalAnime = result.data;
+      this.seasonalAnime = this.removeDuplicates(result.data);
+    });
+
+    this.animeService.getSeasonUpcoming().subscribe((result: any) => {
+      this.upcomingAnime = this.removeDuplicates(result.data);
     });
   }
 }
