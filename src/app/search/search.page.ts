@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonSearchbar, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonSearchbar, IonItem, IonLabel, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent, IonList } from '@ionic/angular/standalone';
 
 import { Anime } from '../services/anime'
 import { returnUpBackOutline } from 'ionicons/icons';
@@ -9,7 +9,7 @@ import { returnUpBackOutline } from 'ionicons/icons';
   templateUrl: './search.page.html',
   styleUrls: ['./search.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonSearchbar, IonList, IonItem, IonLabel]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonSearchbar,IonList, IonItem, IonLabel, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent]
 })
 export class SearchPage {
 
