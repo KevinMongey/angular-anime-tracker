@@ -12,12 +12,15 @@
         <ion-searchbar placeholder="Search anime..." (ionInput)="handleSearchAnime($event)" [debounce]="500" show-clear-button="always"></ion-searchbar>
     </ion-toolbar>
 
-    <ion-list>
-        @for (anime of results; track anime.mal_id) {
-            <ion-item>
-                <ion-label>{{ anime.title }}</ion-label>
-            </ion-item>
-        }
-    </ion-list>
+    <ion-grid>
+        <ion-row>
+            @for (anime of results; track anime.mal_id) {
+                
+                <ion-col size="6" size-md="3" size-lg="2">
+                    <app-anime-card [anime]="anime"></app-anime-card>
+                </ion-col>
+            }
+        </ion-row>
+    </ion-grid>
 
 </ion-content>
