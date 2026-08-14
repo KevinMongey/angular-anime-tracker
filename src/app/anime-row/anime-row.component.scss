@@ -1,16 +1,22 @@
 .body {
-    display:flex;
-    overflow-x:auto;
-    gap: 7px;
+  display:flex;
+  overflow-x:auto;
+  gap: 9px;
 }
 
 .body app-anime-card {
   flex: 0 0 180px;
 }
 
+.body::-webkit-scrollbar {
+  display: none;
+}
+
 .row {
   padding:20px;
 }
+
+
 
 
 

@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +13,36 @@
       <ion-title size="large">details</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div class="details-page" [style.background-image]="'url(' + anime.images.jpg.large_image_url + ')'">
+    <div class="details-container">
+      <div class="image-container">
+        <img [src]="anime.images.jpg.large_image_url">
+      </div>
+      <div class="details">
+        <h1>{{ anime.title_english || anime.title || anime.title_japanese }}</h1>
+        <h2>{{anime.title}}</h2>
+
+        @for (genre of anime.genres; track genre.mal_id) {
+          <ion-chip>{{genre.name}}</ion-chip>
+        }
+      </div>
+      <div class="info">
+        <ion-icon name="star-sharp" aria-hidden="true" start="true"></ion-icon>
+        {{anime.score}}
+        {{anime.year}}
+        {{anime.episodes}} Episodes
+      </div>
+      <div class="description">
+        {{anime.synopsis}}
+      </div>
+      <span>
+        <ion-button class="trailer-button" shape="round">
+          <ion-icon name="play" aria-hidden="true" start="true"></ion-icon> Watch Trailer
+        </ion-button>
+        <ion-button class="add-button" shape="round">
+          <ion-icon name="bookmark-sharp" aria-hidden="true" start="true"></ion-icon> Add to List
+        </ion-button>
+      </span>
+    </div>
+  </div>
 </ion-content>

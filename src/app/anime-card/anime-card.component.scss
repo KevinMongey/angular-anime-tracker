@@ -4,6 +4,14 @@ ion-card {
   position: relative;
   height: 100%;
   width: 100%;
+  
+  cursor: pointer;
+  transition: transform 2ms ease;
+}
+
+ion-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 ion-chip {
@@ -35,4 +43,8 @@ ion-chip {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+ion-card-header {
+  padding-bottom: 35px;
 }

@@ -31,4 +31,8 @@ export class Anime {
   searchAnimeByLetter(query: string) {
     return this.http.get(`https://api.tenrai.org/v1/anime?letter=${query}`)
   }
+
+  getAnimeById(id: number) {
+    return this.http.get(`https://api.tenrai.org/v1/anime/${id}`)
+  }
 }

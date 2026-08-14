@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonChip, IonIcon, IonCardContent } from '@ionic/angular/standalone';
 import { starSharp } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
@@ -14,9 +15,14 @@ export class AnimeCardComponent {
 
   @Input() anime: any;
 
-  constructor() {
+  constructor(private router: Router) {
     addIcons({
       starSharp
     });
   }
+
+  navDetails() {
+    this.router.navigate(['/details', this.anime.mal_id]);
+  }
+
 }
