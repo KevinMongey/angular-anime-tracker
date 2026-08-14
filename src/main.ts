@@ -7,6 +7,9 @@ import { AppComponent } from './app/app.component';
 import { provideHttpClient } from '@angular/common/http';
 import { register } from 'swiper/element/bundle'
 
+import { importProvidersFrom } from '@angular/core';
+import { IonicStorageModule } from '@ionic/storage-angular';
+
 register();
 
 bootstrapApplication(AppComponent, {
@@ -14,6 +17,10 @@ bootstrapApplication(AppComponent, {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideHttpClient()
+    provideHttpClient(),
+
+    importProvidersFrom(
+      IonicStorageModule.forRoot()
+    )
   ],
 });

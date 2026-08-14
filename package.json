@@ -23,6 +23,7 @@
     "@angular/router": "20.3.25",
     "@capacitor/core": "8.5.0",
     "@ionic/angular": "^8.0.0",
+    "@ionic/storage-angular": "^4.0.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "swiper": "^14.1.0",
