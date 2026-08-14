@@ -21,7 +21,7 @@ export class DetailsPage implements OnInit {
     addIcons({
       starSharp,
       play,
-      bookmark
+      bookmark,
     });
   }
 

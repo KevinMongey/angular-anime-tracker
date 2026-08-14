@@ -40,6 +40,4 @@ export class MyList {
     const list = await this.storage.get('myList');
     return list || [];
   }
-
-
 }

@@ -3,8 +3,33 @@
         <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>My List</ion-title>
+        <ion-title>My Watchlist</ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content>My List</ion-content>
+<ion-content>
+    @if (animeList.length == 0) {
+        <div class="empty-list">
+            <h2>Your list is empty</h2>
+
+            <p>Add anime to My List to see them here</p>
+        </div>
+    }
+    @else {
+        <ion-grid>
+            <ion-row>
+                @for (anime of animeList; track anime.mal_id) {
+                    
+                    <ion-col size="6" size-md="3" size-lg="2">
+                        <app-anime-card [anime]="anime"></app-anime-card>
+
+                        <ion-button class="remove-button" fill="clear" color="danger" (click)="removeAnime(anime.mal_id)">
+                            <ion-icon name="close" aria-hidden="true"></ion-icon>
+                        </ion-button>
+                    </ion-col>
+                }
+            </ion-row>
+        </ion-grid>
+    }
+
+</ion-content>
