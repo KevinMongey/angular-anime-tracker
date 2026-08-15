@@ -45,5 +45,12 @@
 
     </ion-split-pane>
 
+    @if (!network.connected) {
+      <div class="network-bar offline">No connection</div>
+    }
+
+    @if (network.connected && network.backOnline) {
+      <div class="network-bar online">Back Online</div>
+    }
 
 </ion-app>

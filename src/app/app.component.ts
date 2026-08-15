@@ -5,6 +5,8 @@ import { homeSharp, searchSharp, bookmarkSharp, settingsSharp} from 'ionicons/ic
 import { IonApp, IonRouterOutlet, IonMenu, IonSplitPane, IonMenuToggle, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonList} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 
+import { NetworkService } from './services/network-service';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -13,7 +15,7 @@ import { addIcons } from 'ionicons';
   imports: [IonApp, IonRouterOutlet, IonMenu, IonSplitPane, IonMenuToggle, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonIcon, IonLabel, IonList, RouterLink],
 })
 export class AppComponent {
-  constructor() {
+  constructor(public network: NetworkService) {
     addIcons({
       homeSharp,
       searchSharp,

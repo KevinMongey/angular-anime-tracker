@@ -28,3 +28,24 @@ ion-icon {
   height: 70px;
   padding: 10px 20px;
 }
+
+.network-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  text-align: center;
+  z-index: 11;
+  font-weight: bold;
+}
+
+.offline {
+  background: #c02424;
+  color: white;
+}
+
+.online {
+  background: #1b6b4f;
+  color: white;
+}
