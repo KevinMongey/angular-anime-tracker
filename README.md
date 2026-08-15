@@ -3,7 +3,7 @@ AniFix is my second year Front end Web development module final Project.
 
 More information is available on the wiki section of this Github page.
 
-##Run
+To Run:
 
 ### Prerequisites:
 * Node.js
